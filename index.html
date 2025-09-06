@@ -319,8 +319,8 @@
             font-size: 15px;
         }
 
-        /* Target Audience Section */
-        .target-audience {
+        /* Programs Section (Merged with Target Audience) */
+        .programs {
             padding: 80px 0;
             background: var(--bg);
         }
@@ -419,6 +419,7 @@
         .audience-features {
             list-style: none;
             text-align: left;
+            margin-bottom: 24px;
         }
 
         .audience-features li {
@@ -437,134 +438,58 @@
             font-size: 16px;
         }
 
-        /* Pricing Section */
-        .pricing-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--bg-light), var(--bg));
-            text-align: center;
-        }
-
-        .pricing-card {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            border-radius: var(--radius);
-            padding: 48px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .price-tag {
-            margin-bottom: 24px;
-        }
-
-        .price-original {
-            text-decoration: line-through;
-            color: var(--text-lighter);
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .price-current {
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .price-emi {
-            font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 4px;
-        }
-
-        .price-emi strong {
-            color: var(--success);
-            font-size: 22px;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 32px 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text);
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .check-icon {
-            width: 20px;
-            height: 20px;
-            background: var(--success);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .btn-explore {
+            background: var(--primary);
             color: white;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 16px 40px;
+            padding: 12px 24px;
             border-radius: var(--radius-sm);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+            font-weight: 500;
+            display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
         }
 
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        .btn-explore:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
-        .whatsapp-icon {
-            width: 24px;
-            height: 24px;
+        .btn-coming-soon {
+            background: var(--text-lighter);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            display: inline-block;
+            cursor: not-allowed;
         }
 
-        /* Programs Section */
-        .programs {
-            padding: 100px 0;
+        /* Specialized Programs Section */
+        .specialized-programs {
+            display: none;
+            padding: 80px 0;
             background: var(--bg-light);
         }
 
-        .programs-quadrant {
+        .specialized-programs.active {
+            display: block;
+        }
+
+        .programs-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .program-card {
             background: white;
-            padding: 48px 40px;
+            padding: 40px 32px;
             border-radius: var(--radius);
             text-align: left;
             transition: all 0.3s ease;
             border: 1px solid var(--border);
-            min-height: 320px;
-            display: flex;
-            flex-direction: column;
             position: relative;
             overflow: hidden;
         }
@@ -617,12 +542,11 @@
             line-height: 1.6;
             font-size: 16px;
             margin-bottom: 24px;
-            flex-grow: 1;
         }
 
         .program-features {
             list-style: none;
-            margin-top: auto;
+            margin-bottom: 24px;
         }
 
         .program-features li {
@@ -638,6 +562,93 @@
             content: '→';
             color: var(--primary);
             font-weight: 600;
+        }
+
+        .program-duration {
+            background: var(--bg-lighter);
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+        }
+
+        .duration-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .duration-item:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* School Program Brochure Section */
+        .school-program {
+            display: none;
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .school-program.active {
+            display: block;
+        }
+
+        .program-brochure {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .brochure-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .brochure-content {
+            padding: 40px;
+        }
+
+        .module-card {
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .module-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .module-duration {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .week-breakdown {
+            margin-top: 16px;
+        }
+
+        .week-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .week-item:last-child {
+            border-bottom: none;
         }
 
         /* Journey Section */
@@ -718,6 +729,81 @@
             font-size: 12px;
             color: var(--text-light);
             line-height: 1.4;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-light), var(--bg));
+            text-align: center;
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 16px 40px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
         }
 
         /* CTA Section */
@@ -804,6 +890,25 @@
             font-size: 14px;
         }
 
+        /* Back Button */
+        .back-btn {
+            background: var(--bg-lighter);
+            color: var(--text);
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--border);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -830,7 +935,7 @@
                 gap: 32px;
             }
 
-            .programs-quadrant {
+            .programs-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -991,7 +1096,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">THE THINK+LAB EXPERIENCE</span>
-                <h2>"Not just learning—an industry-immersed transformation experience"</h2>
+                <h2>"Not just learning, an industry-immersed transformation experience"</h2>
             </div>
             <div class="advantage-grid">
                 <div class="advantage-card">
@@ -1001,7 +1106,7 @@
                         </svg>
                     </div>
                     <h3>In-Building Advantage</h3>
-                    <p>Gain exclusive access to industry leaders, real-world projects, and networking opportunities that accelerate your career transformation.</p>
+                    <p>Work collaborative workspaces on exclusive real-world projects.</p>
                 </div>
                 <div class="advantage-card">
                     <div class="advantage-icon">
@@ -1018,7 +1123,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                         </svg>
                     </div>
-                    <h3>Personalized LMS</h3>
+                    <h3>Personalized Tools</h3>
                     <p>Track your learning and project milestones with a tailored system</p>
                 </div>
                 <div class="advantage-card">
@@ -1046,7 +1151,7 @@
                         </svg>
                     </div>
                     <h3>Co-Branded Certificates</h3>
-                    <p>Receive certificates co-branded with industry partners like KPMG</p>
+                    <p>Receive certificates co-branded from our partners</p>
                 </div>
                 <div class="advantage-card">
                     <div class="advantage-icon">
@@ -1070,11 +1175,11 @@
         </div>
     </section>
 
-    <!-- Target Audience Section -->
-    <section class="target-audience">
+    <!-- Programs Section (Merged with Target Audience) -->
+    <section id="programs" class="programs">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">WHO THIS IS FOR</span>
+                <span class="section-label">PROGRAMS</span>
                 <h2>Designed for Business Minds at Every Stage</h2>
                 <p class="section-subtitle">
                     Whether you're starting your journey or advancing your career, Think+Lab bridges the gap between business acumen and analytics expertise.
@@ -1098,6 +1203,7 @@
                         <li>Gain competitive edge</li>
                         <li>Future-ready skill development</li>
                     </ul>
+                    <a href="#" class="btn-explore" onclick="showSchoolProgram()">Explore Program</a>
                 </div>
                 
                 <div class="audience-card">
@@ -1108,13 +1214,14 @@
                     </div>
                     <div class="audience-subtitle">Career Launch</div>
                     <h3>Fresh Graduates</h3>
-                    <p>Business graduates looking to bridge the gap between theoretical knowledge and applied analytics for immediate career impact.</p>
+                    <p>Business graduates looking to bridge the gap between theoretical knowledge and applied analytics for career impact.</p>
                     <ul class="audience-features">
                         <li>Industry-ready skills</li>
                         <li>Real-world project experience</li>
                         <li>Direct pathway to analytics roles</li>
                         <li>Professional network building</li>
                     </ul>
+                    <a href="#" class="btn-explore" onclick="showSpecializedPrograms()">Explore Program</a>
                 </div>
                 
                 <div class="audience-card">
@@ -1132,37 +1239,216 @@
                         <li>Industry-specific expertise</li>
                         <li>Executive-level analytics thinking</li>
                     </ul>
+                    <span class="btn-coming-soon">Coming Soon</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="programs">
+    <!-- School Program Brochure Section -->
+    <section class="school-program" id="school-program">
         <div class="container">
+            <a href="#" class="back-btn" onclick="hideAllPrograms()">← Back to Programs</a>
+            
+            <div class="program-brochure">
+                <div class="brochure-header">
+                    
+                    <p>2-Year Hybrid Curriculum for School & College Students (Classes 11-12)</p>
+                    <div style="margin-top: 20px; font-size: 18px;">
+                        <strong>Duration:</strong> 2 Years (8 Modules × 4 Months Each)
+                    </div>
+                </div>
+                
+                <div class="brochure-content">
+                    <div class="module-card">
+                        <div class="module-title">Year 1 - Foundations</div>
+                        
+                        <div style="margin-bottom: 24px;">
+                            <div class="module-title" style="font-size: 18px; color: var(--primary);">Module 1: Math & Statistics for Business Analytics</div>
+                            <div class="module-duration">Duration: 16 weeks (4 months)</div>
+                            <p>Master descriptive statistics, probability, correlation, and regression basics through business case studies.</p>
+                            
+                            <div class="week-breakdown">
+                                <div class="week-item">
+                                    <span><strong>Bootcamp (Weeks 1-4):</strong></span>
+                                    <span>Foundation building</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Projects (Weeks 5-12):</strong></span>
+                                    <span>6 curated business projects</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Capstone (Weeks 13-16):</strong></span>
+                                    <span>Business Performance Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="module-title" style="font-size: 18px; color: var(--primary);">Module 2: Programming + Data Visualization + GenAI</div>
+                            <div class="module-duration">Duration: 16 weeks (4 months)</div>
+                            <p>Learn Python, Tableau/Power BI, and GenAI tools for automated insights and reporting.</p>
+                            
+                            <div class="week-breakdown">
+                                <div class="week-item">
+                                    <span><strong>Bootcamp (Weeks 1-4):</strong></span>
+                                    <span>Python & GenAI foundations</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Projects (Weeks 5-12):</strong></span>
+                                    <span>6 automation projects</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Capstone (Weeks 13-16):</strong></span>
+                                    <span>AI-Powered Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-title">Year 2 - Applications & Specialization</div>
+                        
+                        <div style="margin-bottom: 24px;">
+                            <div class="module-title" style="font-size: 18px; color: var(--primary);">Module 3: Applied Business Analytics</div>
+                            <div class="module-duration">Duration: 16 weeks (4 months)</div>
+                            <p>Overview of Marketing, Finance, HR, and Operations analytics with hands-on projects.</p>
+                            
+                            <div class="week-breakdown">
+                                <div class="week-item">
+                                    <span><strong>Bootcamp (Weeks 1-4):</strong></span>
+                                    <span>Multi-domain foundations</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Projects (Weeks 5-12):</strong></span>
+                                    <span>7 domain-specific projects</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Capstone (Weeks 13-16):</strong></span>
+                                    <span>Multi-Domain Analytics Strategy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="module-title" style="font-size: 18px; color: var(--primary);">Module 4: Specialization Track</div>
+                            <div class="module-duration">Duration: 16 weeks (4 months)</div>
+                            <p>Deep dive into one chosen domain: Marketing, Finance, HR, or Operations Analytics.</p>
+                            
+                            <div class="week-breakdown">
+                                <div class="week-item">
+                                    <span><strong>Bootcamp (Weeks 1-4):</strong></span>
+                                    <span>Advanced domain methods</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Projects (Weeks 5-12):</strong></span>
+                                    <span>5 specialized projects</span>
+                                </div>
+                                <div class="week-item">
+                                    <span><strong>Capstone (Weeks 13-16):</strong></span>
+                                    <span>End-to-End AI Solution</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--bg-lighter); padding: 24px; border-radius: var(--radius-sm); margin-top: 32px;">
+                        <h3 style="color: var(--text); margin-bottom: 16px;">Program Outcomes</h3>
+                        <ul style="margin-left: 20px; color: var(--text-light);">
+                            <li>Master business math, statistics, and Python for analytics</li>
+                            <li>Use Tableau/Power BI + GenAI to create business dashboards</li>
+                            <li>Apply ML/DL techniques in business domains</li>
+                            <li>Automate reporting & workflows with RPA/AI tools</li>
+                            <li>Graduate with 4 major capstone projects + specialization portfolio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Programs Section -->
+    <section class="specialized-programs" id="specialized-programs">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="hideAllPrograms()">← Back to Programs</a>
+            
             <div class="section-header">
                 <span class="section-label">Specialized Tracks</span>
                 <h2>Choose Your Analytics Path</h2>
                 <p class="section-subtitle">
-                    Four first-of-its-kind Gen-AI programs designed for specific business functions.
+                    Five specialized Gen-AI programs designed for specific business functions - perfect for fresh graduates ready to launch their analytics career.
                 </p>
             </div>
-            <div class="programs-quadrant">
+            
+            <div class="programs-grid">
                 <div class="program-card">
                     <div class="program-icon">
                         <svg viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3>Financial Analytics</h3>
+                    <h3>Finance Analytics</h3>
                     <p>Master financial modeling, risk assessment, and strategic financial planning with AI-powered insights for modern finance professionals.</p>
+                    
+                    <div class="program-duration">
+                        <div class="duration-item">
+                            <span>Bootcamp:</span>
+                            <span>4 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Curated Projects:</span>
+                            <span>8 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Total Duration:</span>
+                            <span>12 weeks</span>
+                        </div>
+                    </div>
+                    
                     <ul class="program-features">
-                        <li>Credit risk models</li>
-                        <li>CFO dashboards</li>
-                        <li>Revenue forecasting</li>
-                        <li>AI insights integration</li>
+                        <li>Advanced financial forecasting with ARIMA & LSTM</li>
+                        <li>Credit risk modeling & fraud detection</li>
+                        <li>Portfolio optimization strategies</li>
+                        <li>GenAI for financial report automation</li>
+                        <li>Real-time financial dashboards</li>
+                        <li>Investment strategy development</li>
                     </ul>
                 </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3>HR Analytics</h3>
+                    <p>Transform human resources with predictive hiring models, performance analytics, and employee engagement insights powered by AI.</p>
+                    
+                    <div class="program-duration">
+                        <div class="duration-item">
+                            <span>Bootcamp:</span>
+                            <span>4 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Curated Projects:</span>
+                            <span>8 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Total Duration:</span>
+                            <span>12 weeks</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="program-features">
+                        <li>Predictive hiring & talent acquisition</li>
+                        <li>Employee attrition prediction models</li>
+                        <li>Performance analytics & KPI tracking</li>
+                        <li>Sentiment analysis of HR surveys</li>
+                        <li>AI-powered HR chatbots</li>
+                        <li>Workforce planning & optimization</li>
+                    </ul>
+                </div>
+                
                 <div class="program-card">
                     <div class="program-icon">
                         <svg viewBox="0 0 24 24">
@@ -1170,29 +1456,33 @@
                         </svg>
                     </div>
                     <h3>Marketing Analytics</h3>
-                    <p>Transform marketing strategies with data-driven insights, customer behavior analysis, and campaign optimization techniques.</p>
-                    <ul class="program-features">
-                        <li>Campaign optimization</li>
-                        <li>Customer segmentation</li>
-                        <li>ROI prediction tools</li>
-                        <li>Marketing automation</li>
-                    </ul>
-                </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
+                    <p>Transform marketing strategies with data-driven insights, customer behavior analysis, and AI-powered campaign optimization techniques.</p>
+                    
+                    <div class="program-duration">
+                        <div class="duration-item">
+                            <span>Bootcamp:</span>
+                            <span>4 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Curated Projects:</span>
+                            <span>8 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Total Duration:</span>
+                            <span>12 weeks</span>
+                        </div>
                     </div>
-                    <h3>Retail & HR Analytics</h3>
-                    <p>Optimize retail operations and human resources with predictive analytics, workforce planning, and performance optimization strategies.</p>
+                    
                     <ul class="program-features">
-                        <li>Demand forecasting</li>
-                        <li>Workforce planning</li>
-                        <li>Performance optimization</li>
-                        <li>Inventory management</li>
+                        <li>Customer lifetime value prediction</li>
+                        <li>Advanced segmentation with clustering</li>
+                        <li>Campaign ROI optimization</li>
+                        <li>Recommendation system development</li>
+                        <li>A/B testing & experimentation</li>
+                        <li>Marketing mix modeling</li>
                     </ul>
                 </div>
+                
                 <div class="program-card">
                     <div class="program-icon">
                         <svg viewBox="0 0 24 24">
@@ -1200,12 +1490,64 @@
                         </svg>
                     </div>
                     <h3>Social Media Analytics</h3>
-                    <p>Harness social media data for brand insights, trend prediction, and content strategy optimization with advanced analytics tools.</p>
+                    <p>Harness social media data for brand insights, trend prediction, and content strategy optimization with advanced analytics and AI tools.</p>
+                    
+                    <div class="program-duration">
+                        <div class="duration-item">
+                            <span>Bootcamp:</span>
+                            <span>4 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Curated Projects:</span>
+                            <span>8 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Total Duration:</span>
+                            <span>12 weeks</span>
+                        </div>
+                    </div>
+                    
                     <ul class="program-features">
-                        <li>Sentiment analysis</li>
-                        <li>Viral trend prediction</li>
-                        <li>Content strategy automation</li>
-                        <li>Influencer analytics</li>
+                        <li>Real-time sentiment analysis</li>
+                        <li>Viral trend prediction algorithms</li>
+                        <li>Influencer analytics & scoring</li>
+                        <li>Content performance optimization</li>
+                        <li>Social listening dashboards</li>
+                        <li>Brand reputation monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3>Operations Analytics</h3>
+                    <p>Optimize business operations with supply chain analytics, demand forecasting, and process optimization using advanced AI and ML techniques.</p>
+                    
+                    <div class="program-duration">
+                        <div class="duration-item">
+                            <span>Bootcamp:</span>
+                            <span>4 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Curated Projects:</span>
+                            <span>8 weeks</span>
+                        </div>
+                        <div class="duration-item">
+                            <span>Total Duration:</span>
+                            <span>12 weeks</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="program-features">
+                        <li>Advanced demand forecasting with ML</li>
+                        <li>Supply chain optimization models</li>
+                        <li>Route & logistics optimization</li>
+                        <li>Inventory management systems</li>
+                        <li>Process automation & efficiency</li>
+                        <li>Predictive maintenance analytics</li>
                     </ul>
                 </div>
             </div>
@@ -1261,15 +1603,15 @@
             <div class="section-header">
                 <h2>Ready to Start?</h2>
                 <p class="section-subtitle">
-                    Join the revolution at an exclusive launch price
+                    Join the revolution and transform your career
                 </p>
             </div>
             <div class="pricing-card">
-                <div class="price-tag">
-                    <div class="price-current">₹24,999</div>
-                    <div class="price-emi">i.e. just <strong>₹8,333</strong>/month</div>
-                    <div style="font-size: 14px; color: var(--text-lighter);">The above price is excluding 18% GST</div>
-                </div>
+                <h3 style="margin-bottom: 24px; color: var(--text);">Program Investment</h3>
+                <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px;">
+                    Our programs are competitively priced to ensure accessibility while maintaining premium quality education and industry exposure.
+                </p>
+                
                 <ul class="pricing-features">
                     <li>
                         <span class="check-icon">✓</span>
@@ -1289,19 +1631,19 @@
                     </li>
                     <li>
                         <span class="check-icon">✓</span>
-                        <span>Personalized LMS – Track progress with your own milestones</span>
+                        <span>Personalized Tools – Track progress with your own milestones</span>
                     </li>
                 </ul>
-                <a href="https://wa.me/918074099714?text=Hi%2C%20I%27m%20interested%20in%20the%20Think%2BLab%20Analytics%20Program%20at%20%E2%82%B924%2C999.%20Please%20share%20more%20details." 
+                <a href="https://wa.me/918074099714?text=Hi%2C%20I%27m%20interested%20in%20the%20Think%2BLab%20Analytics%20Program.%20Please%20share%20pricing%20details." 
                    class="btn-whatsapp" 
                    target="_blank">
                     <svg class="whatsapp-icon" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                     </svg>
-                    I'm Interested
+                    Chat with us for Pricing Details
                 </a>
                 <p style="margin-top: 16px; font-size: 13px; color: var(--text-lighter);">
-                    💬 Chat with our admission counselor instantly
+                    💬 Get personalized pricing information instantly
                 </p>
             </div>
         </div>
@@ -1325,17 +1667,18 @@
                     <h3>Think+Lab</h3>
                     <p>Making analytics accessible for business professionals. Learn, Create, Lead.</p>
                     <p style="color: var(--text-lighter); font-size: 14px;">
-                        contact@thinkpluslab.in<br>
+                        contact@thinkpluslab.com<br>
                         www.thinklabplus.in
                     </p>
                 </div>
                 <div class="footer-links">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="#">Financial Analytics</a></li>
+                        <li><a href="#">Finance Analytics</a></li>
+                        <li><a href="#">HR Analytics</a></li>
                         <li><a href="#">Marketing Analytics</a></li>
-                        <li><a href="#">Retail & HR Analytics</a></li>
                         <li><a href="#">Social Media Analytics</a></li>
+                        <li><a href="#">Operations Analytics</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -1349,12 +1692,33 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                © 2025 Think+Lab. All rights reserved. | Think Smart, Succeed Big
+                © 2024 Think+Lab. All rights reserved. | Think Smart, Succeed Big
             </div>
         </div>
     </footer>
 
     <script>
+        // Show specialized programs for fresh graduates
+        function showSpecializedPrograms() {
+            document.getElementById('programs').style.display = 'none';
+            document.getElementById('specialized-programs').classList.add('active');
+            document.getElementById('school-program').classList.remove('active');
+        }
+
+        // Show school program brochure
+        function showSchoolProgram() {
+            document.getElementById('programs').style.display = 'none';
+            document.getElementById('school-program').classList.add('active');
+            document.getElementById('specialized-programs').classList.remove('active');
+        }
+
+        // Hide all program sections and show main programs section
+        function hideAllPrograms() {
+            document.getElementById('programs').style.display = 'block';
+            document.getElementById('specialized-programs').classList.remove('active');
+            document.getElementById('school-program').classList.remove('active');
+        }
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1385,27 +1749,12 @@
         }, observerOptions);
 
         // Apply to elements
-        document.querySelectorAll('.advantage-card, .program-card, .milestone, .stat, .audience-card').forEach(el => {
+        document.querySelectorAll('.advantage-card, .program-card, .milestone, .stat, .audience-card, .module-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
-
-        // Countdown timer for urgency
-        function updateCountdown() {
-            const countdownElement = document.querySelector('.stat-number');
-            if (countdownElement && countdownElement.textContent === '72hrs') {
-                let hours = 72;
-                setInterval(() => {
-                    hours--;
-                    if (hours > 0) {
-                        countdownElement.textContent = hours + 'hrs';
-                    }
-                }, 3600000); // Update every hour
-            }
-        }
-        updateCountdown();
     </script>
 </body>
 </html>
